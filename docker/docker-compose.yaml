@@ -1,0 +1,19 @@
+name: limo-noetic
+
+services:
+  limo-noetic:
+    image: theconstructai/limo:noetic
+    container_name: limo-noetic
+    restart: always
+    pull_policy: always
+    privileged: true
+    network_mode: host
+    environment:
+      - ROS_MASTER_URI=http://127.0.0.1:11311
+      - ROS_IP=${ROS_IP:-127.0.0.1}
+      - ROS_IPV6=on
+    volumes:
+      - /dev:/dev
+      - ../volumes/launch_ros_drivers.sh:/launch_ros_drivers.sh:ro
+    entrypoint: ["/bin/bash","-lc"]
+    command: ["/launch_ros_drivers.sh"]
