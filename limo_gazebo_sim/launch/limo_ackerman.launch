@@ -1,7 +1,8 @@
 <?xml version="1.0"?>
 <launch>
 
-    <arg name="robot_namespace" default="/"/>
+    <!-- <arg name="robot_namespace" default="/"/> -->
+    <arg name="robot_namespace" default="limo"/>
     <arg name="world_name" default="$(find limo_gazebo_sim)/worlds/empty.world"/>
 
     <include file="$(find gazebo_ros)/launch/empty_world.launch">
@@ -40,6 +41,6 @@
                                 limo_fl_steering_hinge_controller limo_fr_steering_hinge_controller"/>
     <node name="robot_state_publisher" pkg="robot_state_publisher" type="robot_state_publisher" />
     
-    PC의 동작이 무겁고 Gazebo가 즉시 일어나지 않는 경우는, 런치 파일내의 RViz 의 행을 코멘트 아웃 해, RViz 의 기동을 무효화해 주세요.
+    <!-- PC의 동작이 무겁고 Gazebo가 즉시 일어나지 않는 경우는, 런치 파일내의 RViz 의 행을 코멘트 아웃 해, RViz 의 기동을 무효화해 주세요. -->
     <!-- <node name="rviz" pkg="rviz" type="rviz" args="-d $(find limo_description)/rviz/model_display.rviz" /> -->
 </launch>
